@@ -24,9 +24,12 @@ public class Executable {
                     verCarrito();
                     break;
                 case 3:
-                    realizarPago();
+                    eliminarProductoDelCarrito();
                     break;
                 case 4:
+                    realizarPago();
+                    break;
+                case 5:
                     System.out.println("¡Gracias por su visita!");
                     break;
                 default:
@@ -38,6 +41,7 @@ public class Executable {
         scanner.close();
     }
 
+    /* 
     private static void agregarProductoAlCarrito() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Ingrese el nombre del producto: ");
@@ -60,4 +64,6 @@ public class Executable {
         // Aquí iría la lógica para realizar el pago
         System.out.println("Pago realizado correctamente. Gracias por su compra.");
     }
+    */
+    
 }

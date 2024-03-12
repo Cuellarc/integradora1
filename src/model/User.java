@@ -1,136 +1,82 @@
 package model;
 
+import java.time.LocalDate;
+
 public class User {
-    private String Nameuser;
-    private String password;
     private String name;
-    private String lastname;
-    private String fechaNacimiento;
-    private String direccionResidencia;
-    private String city;
-    private String telephone;
-    private String email;
-    
+    private String secName;
+    private String password;
+    private LocalDate birthdate;
+    private String country;
+    private String telefNumber;
+    private String mainPers;
 
-    public User(String Nameuser, String password, String name, String lastname, String fechaNacimiento,
-                   String direccionResidencia, String city, String telephone, String email) {
-        this.Nameuser = Nameuser;
-        this.password = password;
+    public User(String name, String secName, String password, LocalDate birthdate, String country, String telefNumber, String mainPers) {
         this.name = name;
-        this.lastname = lastname;
-        this.fechaNacimiento = fechaNacimiento;
-        this.direccionResidencia = direccionResidencia;
-        this.city = city;
-        this.telephone = telephone;
-        this.email = email;
-    }
-
-    
-
-    public String getNameuser() {
-        return Nameuser;
-    }
-
-    public void setNameuser(String Nameuser) {
-        this.Nameuser = Nameuser;
-    }
-
-
-
-    public String getPassword() {
-        return password;
-    }
-
-
-
-    public void setPassword(String password) {
+        this.secName = secName;
         this.password = password;
+        this.birthdate = birthdate;
+        this.country = country;
+        this.telefNumber = telefNumber;
+        this.mainPers = mainPers;
     }
-
-
 
     public String getName() {
         return name;
     }
 
-
-
     public void setName(String name) {
         this.name = name;
     }
 
-
-
-    public String getLastname() {
-        return lastname;
+    public String getSecName() {
+        return secName;
     }
 
-
-
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public void setSecName(String secName) {
+        this.secName = secName;
     }
 
-
-
-    public String getFechaNacimiento() {
-        return fechaNacimiento;
+    public String getPassword() {
+        return password;
     }
 
-
-
-    public void setFechaNacimiento(String fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-
-
-    public String getDireccionResidencia() {
-        return direccionResidencia;
+    public LocalDate getBirthdate() {
+        return birthdate;
     }
 
-
-
-    public void setDireccionResidencia(String direccionResidencia) {
-        this.direccionResidencia = direccionResidencia;
+    public void setBirthdate(LocalDate birthdate) {
+        this.birthdate = birthdate;
     }
 
-
-
-    public String getCity() {
-        return city;
+    public String getCountry() {
+        return country;
     }
 
-
-
-    public void setCity(String city) {
-        this.city = city;
+    public void setCountry(String country) {
+        this.country = country;
     }
 
-
-
-    public String getTelephone() {
-        return telephone;
+    public String getTelefNumber() {
+        return telefNumber;
     }
 
-
-
-    public void setTelephone(String telephone) {
-        this.telephone = telephone;
+    public void setTelefNumber(String telefNumber) {
+        this.telefNumber = telefNumber;
     }
 
-
-
-    public String getEmail() {
-        return email;
+    public String getMainPers() {
+        return mainPers;
     }
 
-
-
-    public void setEmail(String email) {
-        this.email = email;
+    public void setMainPers(String mainPers) {
+        this.mainPers = mainPers;
     }
-
+    
     
 }
 
