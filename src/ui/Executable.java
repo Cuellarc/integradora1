@@ -21,10 +21,10 @@ public class Executable {
                     agregarProductoAlCarrito();
                     break;
                 case 2:
-                    verCarrito();
+                    sawCar();
                     break;
                 case 3:
-                    eliminarProductoDelCarrito();
+                    removeItemOfList();
                     break;
                 case 4:
                     realizarPago();

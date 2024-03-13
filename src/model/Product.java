@@ -20,6 +20,10 @@ public class Product {
         this.totalSell = 0;
     }
 
+    public Product(Product product, int quantity) {
+        
+    }
+
     public String getId() {
         return id;
     }
@@ -67,4 +71,8 @@ public class Product {
     public void setTotalSell(double totalSell) {
         this.totalSell = totalSell;
     }
+    public void setQuantity(int quantity) {
+        this.amount = quantity;
+    }
+   
 }
