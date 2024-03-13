@@ -1,5 +1,8 @@
 package model;
 
+import java.time.LocalDate;
+import java.util.List;
+
 import model.Node;
 
 public class ControllerApp {
@@ -8,79 +11,41 @@ public class ControllerApp {
     private Node<User> tailUser;
     private Node<Product> headProduct;
     private Node<Product> tailProduct;
-
+    private ListNodes<User> userList = new ListNodes<>();
+    private ListNodes<Product> productList = new ListNodes<>();
+    
     public ControllerApp() {
         this.headUser = null;
         this.tailUser = null;
         this.headProduct = null;
         this.tailProduct = null;
     }
-
-    public int showProducts() {
-        Node<Product> current = headProduct;
-        int i = 0;
-        while (current != null) {
-            System.out.println(i + ". " + current.getData().getDescription());
-            current = current.next;
-            i++;
-        }
-        return i;
+   public List<String> showProducts() {
+    return productList.show();
     }
 
-    public int showUsers() {
-        Node<User> current = headUser;
-        int i = 0;
-        while (current != null) {
-            System.out.println(i + ". " + current.getData().getName());
-            current = current.next;
-            i++;
-        }
-        return i;
+    public void addUser(User user, String name, String secName, String password, LocalDate birthdate, String city, String telefNumber, String mainPers) {
+        user.setName(name);
+        user.setSecName(secName);
+        user.setPassword(password);
+        user.setBirthdate(birthdate);
+        user.setCity(city);
+        user.setTelefNumber(telefNumber);
+        user.setMainPers(mainPers);
+        userList.addElement(user);
     }
 
-    public void addUser(User user) {
-        Node<User> nuevo = new Node<>(user);
-        if (headUser == null) {
-            headUser = nuevo;
-            tailUser = nuevo;
-        } else {
-            tailUser.next = nuevo;
-            nuevo.prev = tailUser;
-            tailUser = nuevo;
-        }
-    }
-
-    public void addProduct(Product product) {
-        Node<Product> nuevo = new Node<>(product);
-        if (headProduct == null) {
-            headProduct = nuevo;
-            tailProduct = nuevo;
-        } else {
-            tailProduct.next = nuevo;
-            nuevo.prev = tailProduct;
-            tailProduct = nuevo;
-        }
+    public void addProduct(Product product, String id, String description, int price, int amount, Category category) {
+        product.setId(id);
+        product.setDescription(description);
+        product.setPrice(price);
+        product.setAmount(amount);
+        product.setCategory(category);
+        productList.addElement(product);
     }
 
     //Metodo para eliminar un producto
-    public void removeProduct(Product product) {
-        if(headProduct != null){
-            if(headProduct.data.equals(product)){
-                headProduct = headProduct.next;
-            }else{
-                Node<Product> prev = headProduct;
-                Node<Product> current = headProduct.next;
-                while(current != null && !current.data.equals(product)){
-                    prev = current;
-                    current = current.next;
-                }
-                if(current != null){
-                    prev.next = current.next;
-                }
-
-
-            }
-        }
-
+public void removeProduct(Product product) {
+    productList.remove(product);
 }
 }

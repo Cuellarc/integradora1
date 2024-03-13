@@ -7,16 +7,16 @@ public class User {
     private String secName;
     private String password;
     private LocalDate birthdate;
-    private String country;
+    private String city;
     private String telefNumber;
     private String mainPers;
 
-    public User(String name, String secName, String password, LocalDate birthdate, String country, String telefNumber, String mainPers) {
+    public User(String name, String secName, String password, LocalDate birthdate, String city, String telefNumber, String mainPers) {
         this.name = name;
         this.secName = secName;
         this.password = password;
         this.birthdate = birthdate;
-        this.country = country;
+        this.city = city;
         this.telefNumber = telefNumber;
         this.mainPers = mainPers;
     }
@@ -53,12 +53,12 @@ public class User {
         this.birthdate = birthdate;
     }
 
-    public String getCountry() {
-        return country;
+    public String getCity() {
+        return city;
     }
 
-    public void setCountry(String country) {
-        this.country = country;
+    public void setCity(String city) {
+        this.city= city;
     }
 
     public String getTelefNumber() {
