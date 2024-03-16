@@ -1,3 +1,4 @@
+import java.util.List;
 import java.util.Scanner;
 
 import model.ControllerApp;
@@ -75,33 +76,42 @@ public class Executable {
                         sc.nextLine(); // Consumir el salto de línea pendiente
                         switch (optionInventory) {
                             case 1:
-                                for (String productDescription : controllerApp.showProducts()) { // Llamar al método showProducts en la instancia de ControllerApp
-                                    System.out.println(productDescription);
-                                }
+                                List<Product> products = controllerApp.showProducts();
+                                for (Product product : products) {
+                                System.out.println(product);
+                            }
                                 break;
-
-                            case 2:
-                                System.out.println("Add a product");
+                                case 2:
                                 System.out.print("Enter the product ID: ");
                                 String id = sc.nextLine();
                                 System.out.print("Enter the product description: ");
                                 String description = sc.nextLine();
                                 System.out.print("Enter the product price: ");
                                 int price = sc.nextInt();
+                                sc.nextLine(); 
                                 System.out.print("Enter the product amount: ");
                                 int amount = sc.nextInt();
                                 sc.nextLine(); 
                                 System.out.print("Enter the product category: ");
                                 Category category = Category.valueOf(sc.nextLine().toUpperCase());
-                                controllerApp.addProduct(new Product( id,  description,  price,  amount, category), id, id, optionInventory, optionInventory, category); // Llamar al método addProduct en la instancia de ControllerApp
+                                controllerApp.addProduct(id, description, price, amount, category);
+                                List<Product> updatedProducts = controllerApp.showProducts();
+                                for (Product product : updatedProducts) {
+                                    System.out.println(product);
+                                }
                                 break;
-                            case 3:
+                                case 3:
+                            
                                 System.out.print("Enter the product ID to delete: ");
                                 String removeProductId = sc.nextLine();
                                 Product productToRemove = new Product(removeProductId, "", 0, 0, Category.OTHER);
-                                controllerApp.removeProduct(productToRemove); 
+                                controllerApp.removeProduct(productToRemove);
+                                List<Product> updatedProductList = controllerApp.showProducts();
+                                for (Product updatedProduct : updatedProductList) {
+                                    System.out.println(updatedProduct);
+                                }
                                 break;
-                            case 4:
+                            case 4: 
                                 System.out.println("Bay good luck");
                                 break;
                             default:
@@ -121,7 +131,7 @@ public class Executable {
             }
         }
     }
-    }
+    
     public void userRegister() {
         //Todo lo de registro de usuario
     }

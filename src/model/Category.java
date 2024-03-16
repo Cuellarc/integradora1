@@ -7,7 +7,7 @@ public enum Category {
     ELECTRONICS, 
     TOYS,
     BOOKS, 
-    TOOLS, 
+    TOOLS, OTHER, 
 
     
 }

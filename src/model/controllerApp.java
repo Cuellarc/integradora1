@@ -2,11 +2,13 @@ package model;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Scanner;
 
 import model.Node;
 
 public class ControllerApp {
 
+    private Scanner sc;
     private Node<User> headUser;
     private Node<User> tailUser;
     private Node<Product> headProduct;
@@ -15,13 +17,14 @@ public class ControllerApp {
     private ListNodes<Product> productList = new ListNodes<>();
     
     public ControllerApp() {
+        sc = new Scanner(System.in);
         this.headUser = null;
         this.tailUser = null;
         this.headProduct = null;
         this.tailProduct = null;
     }
-   public List<String> showProducts() {
-    return productList.show();
+    public List<Product> showProducts() {
+        return productList.show();
     }
 
     public void addUser(User user, String name, String secName, String password, LocalDate birthdate, String city, String telefNumber, String mainPers) {
@@ -35,17 +38,21 @@ public class ControllerApp {
         userList.addElement(user);
     }
 
-    public void addProduct(Product product, String id, String description, int price, int amount, Category category) {
-        product.setId(id);
-        product.setDescription(description);
-        product.setPrice(price);
-        product.setAmount(amount);
-        product.setCategory(category);
-        productList.addElement(product);
+public void addProduct(String id, String description, int price, int amount, Category category) {
+    Product product = new Product(id, description, price, amount, category);
+    System.out.println("Select a category:");
+    int categoryIndex = 0;
+    for (Category cat : Category.values()) {
+        System.out.println((categoryIndex++) + ". " + cat.name());
     }
-
-    //Metodo para eliminar un producto
-public void removeProduct(Product product) {
-    productList.remove(product);
-}
+    categoryIndex = sc.nextInt();
+    sc.nextLine(); 
+    category = Category.values()[categoryIndex];
+    product.setCategory(category);
+    productList.addElement(product);
+    System.out.println("Product added successfully.");
+    }
+    public void removeProduct(Product product) {
+        productList.remove(product);
+    }
 }

@@ -75,4 +75,9 @@ public class Product {
         this.amount = quantity;
     }
    
+    @Override
+    public String toString() {
+        return "Product [id=" + id + ", description=" + description + ", price=" + price + ", amount=" + amount + ", category=" + category + ", totalSell=" + totalSell + "]";
+    }
+
 }

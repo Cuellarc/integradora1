@@ -7,6 +7,7 @@ public class ListNodes<T> {
 
     Node<T> first;
 
+
     public void addElement(T element){
         Node<T> newElement = new Node<>(element);
         if(first == null){
@@ -20,35 +21,33 @@ public class ListNodes<T> {
         }
     }
 
-    public List<String> show() {
-    List<String> elements = new ArrayList<>();
-    Node<T> current = first;
-    int i = 0;
-    while (current != null) {
-        elements.add((i + 1) + ". " + current.getData().toString());
-        current = current.next;
-        i++;
+    public List<T> show() {
+        List<T> elements = new ArrayList<>();
+        Node<T> current = first;
+        while (current != null) {
+            elements.add(current.getData());
+            current = current.next;
+        }
+        return elements;
     }
-    return elements;
-}
-    
-public void remove(T element) {
-    if (first != null) {
-        if (first.data.equals(element)) {
-            first = first.next;
-        } else {
-            Node<T> prev = first;
-            Node<T> current = first.next;
-            while (current != null && !current.data.equals(element)) {
-                prev = current;
-                current = current.next;
-            }
-            if (current != null) {
-                prev.next = current.next;
+    public void remove(T element) {
+        if (first != null) {
+            if (first.data.equals(element)) {
+                first = first.next;
+            } else {
+                Node<T> current = first;
+                Node<T> prev = null;
+                while (current != null && !current.data.equals(element)) {
+                    prev = current;
+                    current = current.next;
+                }
+                if (current != null) {
+                    prev.next = current.next;
+                    current.next = null;
+                }
             }
         }
     }
-}
 
 
 }
