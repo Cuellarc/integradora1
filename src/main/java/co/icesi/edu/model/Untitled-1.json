@@ -1,0 +1,91 @@
+[{
+    "nombre": "Felipe",
+    "apellido": "Ronaldo",
+    "contrasena": "value3",
+    "cumple": "18/10/1998",
+    "ciudad": "cali",
+    "telefono": "321893983289",
+    "mainparece": "value3"
+
+},
+{
+    "nombre": "Carolina",
+    "apellido": "González",
+    "contrasena": "abc123",
+    "cumple": "05/07/1990",
+    "ciudad": "Bogotá",
+    "telefono": "3109876543",
+    "mainparece": "info123"
+},
+{
+    "nombre": "Laura",
+    "apellido": "López",
+    "contrasena": "ilovecoding",
+    "cumple": "25/09/2001",
+    "ciudad": "Cartagena",
+    "telefono": "3171234567",
+    "mainparece": "hello321"
+}
+,
+{
+    "nombre": "Alejandro",
+    "apellido": "Ramírez",
+    "contrasena": "securepassword",
+    "cumple": "08/12/1995",
+    "ciudad": "Barranquilla",
+    "telefono": "3187654321",
+    "mainparece": "pass456"
+},
+{
+    "nombre": "María",
+    "apellido": "Gómez",
+    "contrasena": "mysecretpassword",
+    "cumple": "03/06/1987",
+    "ciudad": "Pereira",
+    "telefono": "3158765432",
+    "mainparece": "secret789"
+},
+{
+ 
+    "id": "12",
+    "descripcion": "Bebida gaseosa",
+    "precio": "2000",
+    "cantidad": "10",
+    "categoria": "Bebidas",
+    "totalSell": "0",
+    "imagen": "https://www.coca-cola.com.co/content/dam/journey/co/es/private/hydration/2016/07/COKE_12oz_12pk_Can_2016.png"
+    
+},
+{
+   
+    "id": "33",
+    "descripcion": "Bebida gaseosa",
+    "precio": "1500",
+    "cantidad": "33",
+    "categoria": "Bebidas",
+    "totalSell": "23",
+    "imagen": "https://www.pepsico.com/images/album/brands/pepsi/pepsi-1.0.jpg"
+
+},
+{
+    "id": "22",
+    "descripcion": "Teléfono inteligente",
+    "precio": "1000000",
+    "cantidad": "44",
+    "categoria": "Electrónicos",
+    "totalSell": "33",
+    "imagen": "https://www.apple.com/v/iphone/home/ah/images/overview/hero/iphone_12__d8jm5bqt5d6q_large.jpg"
+    
+},
+{
+    "id": "44",
+    "descripcion": "Pizza con jamón y piña",
+    "precio": "25000",
+    "cantidad": "66",
+    "categoria": "Comida",
+    "totalSell": "34",
+    "imagen": "https://www.pizzahut.com.co/medias/sys_master/images/images/hf8/hf1/10099464857630.png"
+   
+}
+
+]
