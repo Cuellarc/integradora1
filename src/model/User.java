@@ -61,7 +61,7 @@ public class User {
         this.city= city;
     }
 
-    public String getTelefNumber() {
+    public int getTelefNumber() {
         return telefNumber;
     }
 

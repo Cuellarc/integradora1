@@ -1,7 +1,6 @@
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Scanner;
-
 import model.ControllerApp;
 import model.Product;
 import model.Category;
@@ -25,10 +24,10 @@ public class Executable {
             menuOption = sc.nextInt();
             switch (menuOption) {
                 case 1:
-                    registro();
+                    Login();
                     break;
                 case 2:
-                    userRegister();
+                    registro();
                     break;
                 case 3:
                     System.out.println("Bye Bye");
@@ -39,8 +38,11 @@ public class Executable {
             }
         }
     }
+    public void Login(){
 
-        public void registro() {
+    }
+
+    public void registro() {
         System.out.println("Type your username");
         sc.nextLine();
         String user = sc.nextLine();
@@ -141,10 +143,6 @@ public class Executable {
                     break;
             }
         }
-    }
-    
-    public void userRegister() {
-        //Todo lo de registro de usuario
     }
 
     public void search() {
