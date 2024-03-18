@@ -27,14 +27,14 @@ public class ControllerApp {
         return productList.show();
     }
 
-    public void addUser(User user, String name, String secName, String password, LocalDate birthdate, String city, String telefNumber, String mainPers) {
+    public void addUser(User user, String name, String secName, String password, LocalDate birthdate, String city, int telefNumber, String mailPers) {
         user.setName(name);
         user.setSecName(secName);
         user.setPassword(password);
         user.setBirthdate(birthdate);
         user.setCity(city);
         user.setTelefNumber(telefNumber);
-        user.setMainPers(mainPers);
+        user.setMailPers(mailPers);
         userList.addElement(user);
     }
 

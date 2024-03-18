@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Scanner;
 
@@ -39,21 +40,31 @@ public class Executable {
         }
     }
 
-    public void registro() {
-        System.out.println("Type the user name");
+        public void registro() {
+        System.out.println("Type your username");
         sc.nextLine();
-        String addUser = sc.nextLine();
-
-        System.out.println("type secund name");
+        String user = sc.nextLine();
+        System.out.println("Type your first names");
+        String name = sc.nextLine();
+        System.out.println("Type your last name");
         String secName = sc.nextLine();
         System.out.println("");
         System.out.println("Type the password");
         String passwordLogIn = sc.nextLine();
+        System.out.println("Type your birthday in format AAAA/MM/DD");
+        String birthdateString = sc.nextLine();
+        LocalDate birthdate = LocalDate.parse(birthdateString);
+        System.out.println("Type your city");
+        String city = sc.nextLine();
+        System.out.println("Type your telephone number");
+        int telefNumber = sc.nextInt();
+        sc.nextLine();
+        System.out.println("Type your personal mail");
+        String mailPers = sc.nextLine();
 
-      
-
-        boolean comprovation = true;
-        if (comprovation) {
+        ControllerApp.addUser(user, name, secName, passwordLogIn, birthdate, city, telefNumber, mailPers);
+        boolean comprobation = true;
+        if (comprobation) {
             menu2();
         }
     }
