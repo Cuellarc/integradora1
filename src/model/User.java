@@ -3,6 +3,7 @@ package model;
 import java.time.LocalDate;
 
 public class User {
+    private String userName;
     private String name;
     private String secName;
     private String password;
@@ -11,7 +12,9 @@ public class User {
     private int telefNumber;
     private String mailPers;
 
-    public User(String name, String secName, String password, LocalDate birthdate, String city, int telefNumber, String mailPers) {
+    public User(String userName, String name, String secName, String password, LocalDate birthdate, String city,
+            int telefNumber, String mailPers) {
+        this.userName = userName;
         this.name = name;
         this.secName = secName;
         this.password = password;
@@ -58,7 +61,7 @@ public class User {
     }
 
     public void setCity(String city) {
-        this.city= city;
+        this.city = city;
     }
 
     public int getTelefNumber() {
@@ -76,7 +79,13 @@ public class User {
     public void setMailPers(String mailPers) {
         this.mailPers = mailPers;
     }
-    
-    
-}
 
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+}

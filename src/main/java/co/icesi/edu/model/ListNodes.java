@@ -8,6 +8,7 @@ import java.util.List;
 public class ListNodes<T> {
 
     Node<T> first;
+    Node<T> prev;
 
 
     public void addElement(T element){
@@ -34,22 +35,17 @@ public class ListNodes<T> {
     }
     public void remove(T element) {
         if (first != null) {
-            if (first.data.equals(element)) {
-                first = first.next;
-            } else {
-                Node<T> current = first;
-                Node<T> prev = null;
-                while (current != null && !current.data.equals(element)) {
-                    prev = current;
-                    current = current.next;
-                }
-                if (current != null) {
-                    prev.next = current.next;
-                    current.next = null;
-                }
+            Node<T> prev = first; // Initialize prev to first
+            Node<T> current = first;
+            while (current != null && !current.data.equals(element)) {
+                prev = current;
+                current = current.next;
+            }
+            if (current != null) {
+                prev.next = current.next;
+                current.next = null;
             }
         }
     }
-
 
 }

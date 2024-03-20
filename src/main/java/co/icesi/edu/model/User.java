@@ -1,28 +1,28 @@
 package co.icesi.edu.model;
 
-
-
 import java.time.LocalDate;
 
 public class User {
+    private String userName;
     private String name;
     private String secName;
     private String password;
     private LocalDate birthdate;
     private String city;
-    private String telefNumber;
-    private String mainPers;
+    private int telefNumber;
+    private String mailPers;
 
-    public User(String name, String secName, String password, LocalDate birthdate, String city, String telefNumber, String mainPers) {
+    public User(String userName,String name, String secName, String password, LocalDate birthdate, String city, int telefNumber, String mailPers) {
+        this.userName = userName;
         this.name = name;
         this.secName = secName;
         this.password = password;
         this.birthdate = birthdate;
         this.city = city;
         this.telefNumber = telefNumber;
-        this.mainPers = mainPers;
+        this.mailPers = mailPers;
     }
-
+    
     public String getName() {
         return name;
     }
@@ -63,22 +63,29 @@ public class User {
         this.city= city;
     }
 
-    public String getTelefNumber() {
+    public int getTelefNumber() {
         return telefNumber;
     }
 
-    public void setTelefNumber(String telefNumber) {
+    public void setTelefNumber(int telefNumber) {
         this.telefNumber = telefNumber;
     }
 
-    public String getMainPers() {
-        return mainPers;
+    public String getMailPers() {
+        return mailPers;
     }
 
-    public void setMainPers(String mainPers) {
-        this.mainPers = mainPers;
+    public void setMailPers(String mailPers) {
+        this.mailPers = mailPers;
     }
 
+    public String getUserName() {
+        return userName;
+    }
 
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+    
+    
 }
-

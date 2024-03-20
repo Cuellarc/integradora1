@@ -1,5 +1,6 @@
 package co.icesi.edu.ui;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Scanner;
 
@@ -9,11 +10,11 @@ import co.icesi.edu.model.ControllerApp;
 
 public class Executable {
     private Scanner sc;
-    private ControllerApp controllerApp;
+    private ControllerApp app;
 
     public Executable() {
         sc = new Scanner(System.in);
-        controllerApp = new ControllerApp();
+        app = new ControllerApp();
     }
 
     public static void main(String[] args) {
@@ -44,24 +45,36 @@ public class Executable {
         }
     }
 
-    public void registro() {
-        System.out.println("Type the user name");
+   public void registro() {
+        System.out.println("Type your username");
         sc.nextLine();
-        String addUser = sc.nextLine();
-
-        System.out.println("Type second name"); // Cambié "secund" a "second"
+        String user = sc.nextLine();
+        System.out.println("Type your first names");
+        String name = sc.nextLine();
+        System.out.println("Type your last name");
         String secName = sc.nextLine();
-        System.out.println(""); // Eliminé esta línea ya que no aporta nada
-
+        System.out.println("");
         System.out.println("Type the password");
         String passwordLogIn = sc.nextLine();
+        System.out.println("Type your birthday in format AAAA/MM/DD");
+        String birthdateString = sc.nextLine();
+        LocalDate birthdate = LocalDate.parse(birthdateString);
+        System.out.println("Type your city");
+        String city = sc.nextLine();
+        System.out.println("Type your telephone number");
+        int telefNumber = sc.nextInt();
+        sc.nextLine();
+        System.out.println("Type your personal mail");
+        String mailPers = sc.nextLine();
 
-        boolean confirmation = true; // Corregí "comprovation" a "confirmation"
-        if (confirmation) {
+        app.addUser(user, name, secName, passwordLogIn, birthdate, city, telefNumber, mailPers);
+        boolean comprobation = true;
+        if (comprobation) {
             menu2();
         }
     }
 
+    
     public void menu2() {
         int menuOption2 = 0;
         ControllerApp controllerApp = new ControllerApp(); // Crear una instancia de la clase ControllerApp

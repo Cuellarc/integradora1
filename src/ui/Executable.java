@@ -7,9 +7,11 @@ import model.Category;
 
 public class Executable {
     private Scanner sc;
+    private ControllerApp app;
 
     public Executable() {
         sc = new Scanner(System.in);
+        app = new ControllerApp();
     }
 
     public static void main(String[] args) {
@@ -38,7 +40,15 @@ public class Executable {
             }
         }
     }
-    public void Login(){
+
+    public void Login() {
+        System.out.println("------Login Menú------\n");
+        System.out.println("Enter your username");
+        String userName = sc.nextLine();
+        if (userName = app.userList(userName)) {
+            System.out.println("Enter your password");
+
+        }
 
     }
 
@@ -64,12 +74,13 @@ public class Executable {
         System.out.println("Type your personal mail");
         String mailPers = sc.nextLine();
 
-        ControllerApp.addUser(user, name, secName, passwordLogIn, birthdate, city, telefNumber, mailPers);
+        app.addUser(user, name, secName, passwordLogIn, birthdate, city, telefNumber, mailPers);
         boolean comprobation = true;
         if (comprobation) {
             menu2();
         }
     }
+
     public void menu2() {
         int menuOption2 = 0;
         ControllerApp controllerApp = new ControllerApp(); // Crear una instancia de la clase ControllerApp
@@ -79,32 +90,33 @@ public class Executable {
             sc.nextLine(); // Consumir el salto de línea pendiente
             switch (menuOption2) {
                 case 1:
-                    //Compra(Canasta y Pago)
+                    // Compra(Canasta y Pago)
                     break;
                 case 2:
                     int optionInventory = 0;
                     while (optionInventory != 4) {
-                        System.out.println("What do you want to do\n1. See all products\n2. Add a product\n3. Delete a product\n4. Exit");
+                        System.out.println(
+                                "What do you want to do\n1. See all products\n2. Add a product\n3. Delete a product\n4. Exit");
                         optionInventory = sc.nextInt();
                         sc.nextLine(); // Consumir el salto de línea pendiente
                         switch (optionInventory) {
                             case 1:
                                 List<Product> products = controllerApp.showProducts();
                                 for (Product product : products) {
-                                System.out.println(product);
-                            }
+                                    System.out.println(product);
+                                }
                                 break;
-                                case 2:
+                            case 2:
                                 System.out.print("Enter the product ID: ");
                                 String id = sc.nextLine();
                                 System.out.print("Enter the product description: ");
                                 String description = sc.nextLine();
                                 System.out.print("Enter the product price: ");
                                 int price = sc.nextInt();
-                                sc.nextLine(); 
+                                sc.nextLine();
                                 System.out.print("Enter the product amount: ");
                                 int amount = sc.nextInt();
-                                sc.nextLine(); 
+                                sc.nextLine();
                                 System.out.print("Enter the product category: ");
                                 Category category = Category.valueOf(sc.nextLine().toUpperCase());
                                 controllerApp.addProduct(id, description, price, amount, category);
@@ -113,8 +125,8 @@ public class Executable {
                                     System.out.println(product);
                                 }
                                 break;
-                                case 3:
-                            
+                            case 3:
+
                                 System.out.print("Enter the product ID to delete: ");
                                 String removeProductId = sc.nextLine();
                                 Product productToRemove = new Product(removeProductId, "", 0, 0, Category.OTHER);
@@ -124,7 +136,7 @@ public class Executable {
                                     System.out.println(updatedProduct);
                                 }
                                 break;
-                            case 4: 
+                            case 4:
                                 System.out.println("Bay good luck");
                                 break;
                             default:
@@ -151,15 +163,16 @@ public class Executable {
             System.out.println("What do you want to search?\n1.Search a product\n2.Search for an order\n3. Exit");
             optionSearch = sc.nextInt();
             switch (optionSearch) {
-                case 1: //Search a product
+                case 1: // Search a product
                     int optionMethodSearchP = 0; // método que usará para buscar
                     while (optionMethodSearchP != 4) {
-                        System.out.println("Which method do you want to use\n1. Individual Search\n2. Joint Search\n3. Search by ranges\n4. Exit");
+                        System.out.println(
+                                "Which method do you want to use\n1. Individual Search\n2. Joint Search\n3. Search by ranges\n4. Exit");
                         optionMethodSearchP = sc.nextInt();
                         switch (optionMethodSearchP) {
                             case 1:
                                 // Busqueda Individual
-                              break;
+                                break;
                             case 2:
                                 // Busqueda Conjunta
                                 break;
@@ -176,10 +189,11 @@ public class Executable {
 
                     }
                     break;
-                case 2: //Search for an order
+                case 2: // Search for an order
                     int optionMethodSearchO = 0;
                     while (optionMethodSearchO != 4) {
-                        System.out.println("Which method do you want to use\n1. Individual Search\n2. Joint Search\n3. Search by ranges\n4. Exit");
+                        System.out.println(
+                                "Which method do you want to use\n1. Individual Search\n2. Joint Search\n3. Search by ranges\n4. Exit");
                         optionMethodSearchO = sc.nextInt();
                         switch (optionMethodSearchO) {
                             case 1:
