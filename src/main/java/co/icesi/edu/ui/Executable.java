@@ -1,6 +1,7 @@
 package co.icesi.edu.ui;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Scanner;
 
@@ -45,7 +46,7 @@ public class Executable {
         }
     }
 
-   public void registro() {
+        public void registro() {
         System.out.println("Type your username");
         sc.nextLine();
         String user = sc.nextLine();
@@ -56,9 +57,10 @@ public class Executable {
         System.out.println("");
         System.out.println("Type the password");
         String passwordLogIn = sc.nextLine();
-        System.out.println("Type your birthday in format AAAA/MM/DD");
+        System.out.println("Type your birthday in format DD/MM/AAAA"); // Cambiamos el formato de la solicitud al usuario
         String birthdateString = sc.nextLine();
-        LocalDate birthdate = LocalDate.parse(birthdateString);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy"); // Usamos un formateador para el formato actual
+        LocalDate birthdate = LocalDate.parse(birthdateString, formatter); // Analizamos la fecha usando el formateador
         System.out.println("Type your city");
         String city = sc.nextLine();
         System.out.println("Type your telephone number");
@@ -105,15 +107,17 @@ public class Executable {
                                 System.out.print("Enter the product description: ");
                                 String description = sc.nextLine();
                                 System.out.print("Enter the product price: ");
-                                int price = sc.nextInt();
-                                sc.nextLine(); 
+                                String priceString = sc.nextLine();
+                                int price = Integer.parseInt(priceString.replace("$", ""));
                                 System.out.print("Enter the product amount: ");
                                 int amount = sc.nextInt();
                                 sc.nextLine(); 
                                 System.out.print("Enter the product category: ");
-                                Category category = Category.valueOf(sc.nextLine().toUpperCase());
-                                controllerApp.addProduct(id, description, price, amount, category);
-                                List<Product> updatedProducts = controllerApp.showProducts();
+                                String categoryString = sc.nextLine().toUpperCase();
+                                Category category = Category.valueOf(categoryString);
+                                app.addProduct(id, description, price, amount, category);
+                                System.out.println("Product added successfully.");
+                                List<Product> updatedProducts = app.showProducts(); 
                                 for (Product product : updatedProducts) {
                                     System.out.println(product);
                                 }
